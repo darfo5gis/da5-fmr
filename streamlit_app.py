@@ -8,7 +8,6 @@ st.set_page_config(page_title="DA RFO5 Farm-to-Market Roads", layout="wide")
 # More icons can be found here: https://icons.getbootstrap.com
 
 apps = {
-    #"home": {"title": "Home", "icon": "house"}
     "FMR": {"title": "Avian Influenza Updates", "icon": "map"},
 }
 
