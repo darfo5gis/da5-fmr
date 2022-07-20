@@ -1,6 +1,6 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-from apps import FMR,  # import your app modules here
+from apps import FMR  # import your app modules here
 
 st.set_page_config(page_title="DA RFO5 Farm-to-Market Roads", layout="wide")
 
