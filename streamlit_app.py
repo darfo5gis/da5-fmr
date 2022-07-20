@@ -8,7 +8,7 @@ st.set_page_config(page_title="DA RFO5 Farm-to-Market Roads", layout="wide")
 # More icons can be found here: https://icons.getbootstrap.com
 
 apps = {
-    "FMR": {"title": "Avian Influenza Updates", "icon": "map"},
+    "FMR": {"title": "Farm-to-Marker Road Network", "icon": "map"},
 }
 
 titles = [app["title"] for app in apps.values()]
