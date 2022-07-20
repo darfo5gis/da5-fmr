@@ -1,6 +1,6 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-from apps import FMR, home, aisurvey  # import your app modules here
+from apps import FMR,  # import your app modules here
 
 st.set_page_config(page_title="DA RFO5 Farm-to-Market Roads", layout="wide")
 
@@ -8,7 +8,7 @@ st.set_page_config(page_title="DA RFO5 Farm-to-Market Roads", layout="wide")
 # More icons can be found here: https://icons.getbootstrap.com
 
 apps = {
-    "home": {"title": "Home", "icon": "house"},
+    #"home": {"title": "Home", "icon": "house"},
     "FMR": {"title": "Avian Influenza Updates", "icon": "map"},
 }
 
