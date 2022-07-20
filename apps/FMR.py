@@ -7,27 +7,27 @@ def app():
     
     m= leafmap.Map(center=[13.5, 123.15], zoom=8)
     
-    municities = (
-        'https://raw.githubusercontent.com/darfo5gis/streamlit-demo/master/data/vector/r5_municities_camsur.json'
+    FMRs = (
+        'https://raw.githubusercontent.com/darfo5gis/da5-fmr/main/data/2014-2020_FMRs.geojson'
     )
-    ai = (
-        'https://raw.githubusercontent.com/darfo5gis/streamlit-demo/master/data/vector/ai.geojson'
+    proposed_FMRs = (
+        'https://raw.githubusercontent.com/darfo5gis/da5-fmr/main/data/FMR_Proposed.geojson'
     )
-    bp2_benes = (
-        'https://raw.githubusercontent.com/darfo5gis/streamlit-demo/master/data/vector/bp2benes.geojson'
+    OSM_Railroads = (
+        'https://raw.githubusercontent.com/darfo5gis/da5-fmr/main/data/OSM_Railroads_R5.geojson'
     )
-    config = (
-        'https://raw.githubusercontent.com/darfo5gis/streamlit-demo/master/config/vector/m_config.json'
+    OSM_Roads = (
+        'https://raw.githubusercontent.com/darfo5gis/da5-fmr/main/data/OSM_Roads_R5_new.geojson'
     )
-    libmanan = ('https://raw.githubusercontent.com/darfo5gis/streamlit-demo/master/data/vector/barangays-municity-ph051718000.0.01.json')
 
-    gdf_libmanan = gpd.read_file(libmanan)
-    gdf = gpd.read_file(municities)
-    gdf1 = gpd.read_file(ai)
-    gdf2 = gpd.read_file(bp2_benes)
-    m.add_gdf(gdf_libmanan, layer_name='Barangays')
-    m.add_gdf(gdf, layer_name='Municities')
-    m.add_gdf(gdf1, layer_name='AI case')
-    m.add_gdf(gdf2, layer_name='BP2 Livelihood Assistance beneficiaries')
-    m.load_config(config)
+    gdf_FMRs = gpd.read_file(FMRs)
+    gdf_proposed_FMRs = gpd.read_file(proposed_FMRs)
+    gdf_Railroads = gpd.read_file(OSM_Railroads)
+    gdf_Roads = gpd.read_file(OSM_Roads)
+
+    m.add_gdf(gdf_FMRs, layer_name='Existing FMRs (2014-2020)')
+    m.add_gdf(gdf_proposed_FMRs, layer_name='Proposed FMRs')
+    m.add_gdf(gdf_Railroads, layer_name='Railroad')
+    m.add_gdf(gdf_Roads, layer_name='Philippine Road Network')
+    #m.load_config(config)
     m.to_streamlit(height=900, width=900, responsive=True, scrolling=True)
